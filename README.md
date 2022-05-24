@@ -37,6 +37,6 @@ Our model achieves the following performance on:
 | BPLC+NOSO| FMNISTnet        | Fashion-MNIST    | 92.15%       |  16K ± 0.48K          |
 | BPTC+NOSO| CIFARnet         | CIFAR-10         | 87.19%       |  187K ± 0.39K         |
 
-FMNISTnet : 32C5-P2-64C5-P2-600-10  
-CIFARnet : 64C5-128C5-P2-256C5-P2-512C5-256C5-1024-512-10
+*FMNISTnet : 32C5-P2-64C5-P2-600-10  
+*CIFARnet : 64C5-128C5-P2-256C5-P2-512C5-256C5-1024-512-10
 
