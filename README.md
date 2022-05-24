@@ -15,14 +15,14 @@ pip install -r requirements.txt
 [N-MNIST](https://www.garrickorchard.com/datasets/n-mnist) dataset loader was adapted from [PySNN](https://github.com/BasBuller/PySNN) and modified.
 
 ## Training
-To train SNNs (FMNISTnet and CIFARnet) using BPLC on Fashion-MNIST and CIFAR-10, run this command:
+To train SNNs (FMNISTnet and CIFARnet) using BPLC on Fashion-MNIST or CIFAR-10, run this command:
 ```train
 cd BPLC+NOSO
 python main.py --task <FMNIST or CIFAR10> --network <FMNISTnet or CIFARnet> --mode train
 ```
 
 ## Evaluation
-To evaluate a folded SNN (FCN) on MNIST or N-MNIST, run this command:
+To evaluate a folded SNNs( FMNISTnet and CIFARnet) on Fashion-MNIST or CIFAR-10, run this command:
 ```evaluation
 cd BPLC+NOSO
 python main.py --task <FMNIST or CIFAR10> --network <FMNISTnet or CIFARnet> --mode eval
