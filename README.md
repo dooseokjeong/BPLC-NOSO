@@ -10,9 +10,9 @@ pip install -r requirements.txt
 ```
 
 ### Dataset
-[MNIST dataset](http://yann.lecun.com/exdb/mnist/)
+[Fashion-MNIST](https://www.kaggle.com/datasets/zalando-research/fashionmnist)
 
-[N-MNIST](https://www.garrickorchard.com/datasets/n-mnist) dataset loader was adapted from [PySNN](https://github.com/BasBuller/PySNN) and modified.
+[CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) 
 
 ## Training
 To train SNNs (FMNISTnet and CIFARnet) using BPLC on Fashion-MNIST or CIFAR-10, run this command:
