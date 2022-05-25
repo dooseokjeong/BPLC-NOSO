@@ -7,7 +7,6 @@ from networks import FMNISTnet
 from networks import CIFARnet
 
 
-
 def load_data(task, batch_size):
     data_path = './Dataset/'
     
@@ -97,13 +96,3 @@ def save_model(names, model, optimizer, acc, epoch, acc_hist, train_loss_hist, t
     
     if acc == best_acc:
         torch.save(state, './' + '{}_best.pth'.format(names))
-
-
-def scheduler_step(opt, epoch, decay_interval, gamma) : 
-    lr = []
-    if epoch % decay_interval == 0 :
-        for g in opt.param_groups:
-            g['lr'] = g['lr']*gamma
-            lr.append(g['lr'])
-    
-        print("=== learning rate decayed to {}.\n".format(lr))
