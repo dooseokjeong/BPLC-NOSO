@@ -41,7 +41,6 @@ def load_data(task, batch_size):
     return train_loader, test_loader
 
 
-
 def make_model(network, task, thresh, tau_m, tau_s, num_steps, scaling_factor):
     if network == 'FMNISTnet':
         return FMNISTnet(task, thresh, tau_m, tau_s, num_steps, scaling_factor)
@@ -49,7 +48,6 @@ def make_model(network, task, thresh, tau_m, tau_s, num_steps, scaling_factor):
         return CIFARnet(task, thresh, tau_m, tau_s, num_steps, scaling_factor)
     else:
         print('=== Enter the correct network name.')
-
 
 
 def load_model(names, model):
@@ -67,7 +65,6 @@ def load_model(names, model):
     return model
 
 
-
 def load_hyperparemeter(names):
     # return thresh, tau_m, tau_s, num_steps, scaling_factor
     if names == 'FMNIST_FMNISTnet_saved':
@@ -78,7 +75,6 @@ def load_hyperparemeter(names):
 
     else:
         print('=== Enter the correct name.')
-
 
 
 def save_model(names, model, optimizer, acc, epoch, acc_hist, train_loss_hist, test_loss_hist, spike_train_hist, spike_test_hist):
@@ -103,7 +99,6 @@ def save_model(names, model, optimizer, acc, epoch, acc_hist, train_loss_hist, t
         torch.save(state, './' + '{}_best.pth'.format(names))
 
 
-
 def scheduler_step(opt, epoch, decay_interval, gamma) : 
     lr = []
     if epoch % decay_interval == 0 :
@@ -112,4 +107,3 @@ def scheduler_step(opt, epoch, decay_interval, gamma) :
             lr.append(g['lr'])
     
         print("=== learning rate decayed to {}.\n".format(lr))
-
