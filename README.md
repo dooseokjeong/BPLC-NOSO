@@ -22,7 +22,7 @@ python main.py --task <FMNIST or CIFAR10> --network <FMNISTnet or CIFARnet> --mo
 ```
 
 ## Evaluation
-To evaluate a folded SNNs(FMNISTnet and CIFARnet) on Fashion-MNIST or CIFAR-10, run this command:
+To evaluate SNNs(FMNISTnet and CIFARnet) on Fashion-MNIST or CIFAR-10, run this command:
 ```evaluation
 cd BPLC+NOSO
 python main.py --task <FMNIST or CIFAR10> --network <FMNISTnet or CIFARnet> --mode eval
