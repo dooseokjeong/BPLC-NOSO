@@ -112,7 +112,12 @@ def train(model, train_loader, criterion, optimizer):
         
         loss = F.cross_entropy(-outputs[0], labels.to(device))
         
-        if i % (6000 / args.batch_size) == 0 : 
+        # Training progress
+        if args.task == 'FMNIST':
+            train_set_len = 6000
+        elif args.task == 'CIFAR10':
+            train_set_len = 5000
+        if i % (train_set_len / args.batch_size) == 0 : 
             print('=== {} / {} updating...'.format(i, len(train_loader)))
             print('spike count = {}'.format(outputs[2]))
         
