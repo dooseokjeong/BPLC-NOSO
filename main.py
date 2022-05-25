@@ -106,7 +106,7 @@ def train(model, train_loader, criterion, optimizer):
         
         outputs = model(images.to(device), args.batch_size, args.mode)
         
-        # outputs[0]: output spike timings
+        # outputs[0]: output spike latency
         # outputs[1]: mebrane potential of output neurons when spiking
         # outputs[2]: spike map over SNN
         
@@ -141,14 +141,14 @@ def test(model, test_loader, criterion):
             spike_map_test = list([])
             outputs = model(inputs.to(device), args.batch_size, args.mode)
             
-            # outputs[0]: output spike timings
+            # outputs[0]: output spike latency
             # outputs[1]: mebrane potential of output neurons when spiking
             # outputs[2]: spike map over SNN
             
             loss = criterion(-outputs[0].cpu(), targets)
             test_loss += loss.item() / len(test_loader)
             
-            # If multi output neurons has same output, check the membrane potential at spike timing
+            # If multi output neurons has same output, compare the membrane potential of output neurons when spiking
             _, predicted = (torch.abs(outputs[1].cpu()) * (outputs[0].cpu() == (outputs[0].cpu().min(1))[0][:, None])).max(1)
             total += float(targets.size(0))
             correct += float(predicted.eq(targets).sum().item())
