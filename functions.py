@@ -110,3 +110,14 @@ class MinPool(torch.autograd.Function) :
         grad_input = grad_output.clone()
         
         return F.max_unpool2d(grad_input, indices, kernel_size=k_size, stride=stride, output_size=size), None, None, None
+ 
+
+# Optimizer scheduler
+def scheduler_step(opt, epoch, decay_interval, gamma) : 
+    lr = []
+    if epoch % decay_interval == 0 :
+        for g in opt.param_groups:
+            g['lr'] = g['lr']*gamma
+            lr.append(g['lr'])
+    
+        print("=== learning rate decayed to {}.\n".format(lr))
