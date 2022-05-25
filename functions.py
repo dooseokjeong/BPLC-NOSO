@@ -60,7 +60,6 @@ class dodt(torch.autograd.Function):
         return grad_input * output_spike, None, None
 
     
-    
 # NOSO model definition
 def noso(thresh, tau_m, tau_s, ops, x, sav, vm, vs, spike, outneuron=False):
     const = tau_m / (tau_m - tau_s)
@@ -111,7 +110,3 @@ class MinPool(torch.autograd.Function) :
         grad_input = grad_output.clone()
         
         return F.max_unpool2d(grad_input, indices, kernel_size=k_size, stride=stride, output_size=size), None, None, None
-
-
-
-
