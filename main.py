@@ -11,7 +11,7 @@ from utils import make_model
 from utils import load_hyperparemeter
 from utils import load_model
 from utils import save_model
-from utils import scheduler_step
+from functions import scheduler_step
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
