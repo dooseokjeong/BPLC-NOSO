@@ -117,7 +117,7 @@ def train(model, train_loader, criterion, optimizer):
             train_set_len = 6000
         elif args.task == 'CIFAR10':
             train_set_len = 5000
-        if i % (train_set_len / args.batch_size) == 0 : 
+        if i % (train_set_len // args.batch_size) == 0 : 
             print('=== {} / {} updating...'.format(i, len(train_loader)))
             print('spike count = {}'.format(outputs[2]))
         
