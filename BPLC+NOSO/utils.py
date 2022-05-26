@@ -53,13 +53,6 @@ def load_model(names, model):
     PATH =  './Pretrained_params/' 
     checkpoint = torch.load(PATH + names + ".pth")
     model.load_state_dict(checkpoint['net'])
-    # epoch = checkpoint['epoch']
-    # acc = checkpoint['acc']
-    # acc_hist = checkpoint['acc_hist']
-    # loss_train_hist = checkpoint['loss_train_hist']
-    # loss_test_hist = checkpoint['loss_test_hist']
-    # spike_train_hist = checkpoint['spike_train_hist']
-    # spike_test_hist = checkpoint['spike_test_hist']
     
     return model
 
