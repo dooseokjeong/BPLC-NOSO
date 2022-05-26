@@ -395,6 +395,3 @@ class CIFARnet(nn.Module):
                 return out_t, out_u, sum_sp
             
         return out_t, out_u, sum_sp            
-
-
-
