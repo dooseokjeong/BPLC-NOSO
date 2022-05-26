@@ -24,7 +24,7 @@ parser.add_argument('--network', type=str, default='FMNISTnet', help='which netw
 parser.add_argument('--mode', type=str, default='train', help='whether to train or eval')
 
 # Hyperparameters 
-parser.add_argument('--thresh', type=float, default=0.15, help='Dual spiking threshold [mV]')
+parser.add_argument('--thresh', type=float, default=0.15, help='Symmetric dual spiking threshold [mV]')
 parser.add_argument('--tau_m', type=float, default=200, help='Time constant of membrane potential kernel [ms]')
 parser.add_argument('--tau_s', type=float, default=50, help='Time constant of synaptic current kernel [ms]')
 parser.add_argument('--batch_size', type=int, default=100, help='Batch size')
@@ -34,7 +34,7 @@ parser.add_argument('--scaling_factor', type=float, default=0.3, help='Constant 
 parser.add_argument('--weight_decay', type=float, default=5E-3, help='Weight decay (L2 regularization) coefficient')
 parser.add_argument('--learning_rate', type=float, default=5E-3, help='Initial learning rate')
 parser.add_argument('--lr_decay_rate', type=float, default=0.1, help='Learning rate decay rate')
-parser.add_argument('--lr_decay_interval', type=int, default=3, help='Learning rate decay interval')
+parser.add_argument('--lr_decay_interval', type=int, default=50, help='Learning rate decay interval')
 
 
 args = parser.parse_args()
