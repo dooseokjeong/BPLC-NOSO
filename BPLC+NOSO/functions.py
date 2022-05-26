@@ -2,6 +2,7 @@ import torch
 import torch.nn.functional as F
 import numpy as np
 
+
 # Define the gradient of spike timing with membrane potential 
 class dtdu(torch.autograd.Function):
 
