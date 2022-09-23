@@ -20,7 +20,7 @@ def load_data(task, batch_size):
         train_dataset = torchvision.datasets.FashionMNIST(root=data_path, train=True, download=True, transform=transform_train)    
         test_set = torchvision.datasets.FashionMNIST(root=data_path, train=False, download=True, transform=transform_test)
         
-        train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=False, num_workers=4, drop_last=True)
+        train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4, drop_last=True)
         test_loader = torch.utils.data.DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=4, drop_last=True)
     
     # Load CIFAR10 dataset
@@ -34,7 +34,7 @@ def load_data(task, batch_size):
         train_dataset = torchvision.datasets.CIFAR10(root=data_path, train=True, download=True, transform=transform_train)    
         test_set = torchvision.datasets.CIFAR10(root=data_path, train=False, download=True, transform=transform_test)
         
-        train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=False, num_workers=4, drop_last=True)
+        train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4, drop_last=True)
         test_loader = torch.utils.data.DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=4, drop_last=True)
     
     return train_loader, test_loader
